@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+import Hooks from './Hooks/Hooks'
+
+export default function App () {
+  return(
+    <BrowserRouter>
+      <header>
+        <div className="title">
+          <p>TUGAS MODUL 4 KELOMPOK 12</p>
+        </div>
+        <nav>
+          <Link className="text" to="/">
+            Hooks
+          </Link>
+        </nav>
       </header>
-    </div>
+      <Switch>
+        <Route path="/" exact component={Hooks} />
+      </Switch>
+    </BrowserRouter>
   );
 }
-
-export default App;
